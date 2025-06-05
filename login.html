@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-box">
+    <form onsubmit="return loginUser()">
+      <h2>Login</h2>
+
+      <div class="input-group">
+        <label><i class="fa fa-user"></i></label>
+        <input type="text" id="username" placeholder="Type your username" required>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fa fa-lock"></i></label>
+        <input type="password" id="password" placeholder="Type your password" required>
+      </div>
+
+      <div class="forgot">
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">LOGIN</button>
+
+      <p class="signup-text">Or Sign Up Using</p>
+      <div class="social-icons">
+        <div class="circle blue"></div>
+        <div class="circle darkblue"></div>
+        <div class="circle red"></div>
+        <div class="circle gradient"></div>
+      </div>
+
+      <p id="error" style="color: red;"></p>
+    </form>
+  </div>
+
+  <!-- Font Awesome for icons (optional) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <script>
+    function loginUser() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if (user === "Indah cantik" && pass === "131429") {
+        window.location.href = "home.html";
+      } else {
+        document.getElementById("error").innerText = "Username or password is incorrect!";
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
